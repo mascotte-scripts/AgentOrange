@@ -6,7 +6,6 @@ RegisterNetEvent('mascotte-tools:SimulateServerinjection', function(source,event
     TriggerServerEvent('%s','%s','%s','%s','%s'):format(eventName,Param1,Param2,Param3,Param4)
 end)
 
-
 local display = false
 
 RegisterCommand("mascotte", function(source, args)
