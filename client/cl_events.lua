@@ -11,6 +11,8 @@ end)
 
 local display = false
 
+-- Command that opens the NUI
+
 RegisterCommand("FakeInjector", function(source, args)
     SetDisplay(not display)
 end)
