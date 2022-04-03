@@ -40,6 +40,7 @@ document.getElementById("exit-button").onmousedown = () => {
 
 document.getElementById("execute-event-button").onmousedown = () => {
  let x = getInputForEventExecution()
+ console.log(x.eventTarget)
 };
 
 let getInputForEventExecution = () => {
