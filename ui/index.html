@@ -44,11 +44,60 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Events
+        <!-- Event form starts here-->
+        <form>
+          <label for="eventTypeNameLabel" class="form-label">Event Type</label>
+        <select class="form-select" aria-label="event-selector" id="eventType">
+          <option value="1">Client</option>
+          <option value="2">Server</option>
+        </select>
+        <br/>
+        <div class="mb-3">
+          <label for="eventNameLabel" class="form-label">Event Name</label>
+          <input type="text" class="form-control" id="eventName">
+          <div id="emailHelp" class="form-text">i.e - esx_policejob:handcuff</div>
+        </div>
+        <div class="mb-3">
+          <label for="eventNameLabel" class="form-label">Target (Client Only)</label>
+          <input type="text" class="form-control" id="eventClientTarget">
+          <div id="emailHelp" class="form-text">i.e - source, -1</div>
+        </div>
+        <label for="eventTypeNameLabel" class="form-label">Arguments</label>
+        <!--First-->
+        <div class="input-group mb-3">
+          <div class="input-group-text">
+            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="first paramater">
+          </div>
+          <input type="text" class="form-control" placeholder="First Argument" aria-label="first paramater" id="event-arg-1">
+        </div>
+        <!--Second-->
+        <div class="input-group mb-3">
+          <div class="input-group-text">
+            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="second paramater">
+          </div>
+          <input type="text" class="form-control" placeholder="Second Argument" aria-label="second paramater" id="event-arg-2">
+        </div>
+        <!--Third-->
+        <div class="input-group mb-3">
+          <div class="input-group-text">
+            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="third paramater">
+          </div>
+          <input type="text" class="form-control" placeholder="Third Argument" aria-label="third paramater" id="event-arg-3">
+        </div>
+        <!--Fourth-->
+        <div class="input-group mb-3">
+          <div class="input-group-text">
+            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="fourth paramater">
+          </div>
+          <input type="text" class="form-control" placeholder="Fourth Argument" aria-label="fourth paramater" id="event-arg-4">
+        </div>
+        <div id="emailHelp" class="form-text">Tick the checkbox to enable the argument</div>
+        </form>
+        <!-- Form ends-->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-danger">Execute</button>
+        <button type="button" class="btn btn-danger" id="execute-event-button">Execute</button>
       </div>
     </div>
   </div>
@@ -57,7 +106,7 @@
     <div class="container" id="card-options">
       <div class="row">
         <div class="col">
-          <div class="card" style="width: 20rem;" data-bs-toggle="modal" data-bs-target="#ClientModal">
+          <div class="card" style="width: 22rem;" data-bs-toggle="modal" data-bs-target="#ClientModal">
             <img src="./img/settings-icon.png" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><strong><button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#ClientModal">
@@ -67,7 +116,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="card" style="width: 20rem;" data-bs-toggle="modal" data-bs-target="#EventModal">
+          <div class="card" style="width: 22rem;" data-bs-toggle="modal" data-bs-target="#EventModal">
             <img src="https://cdn.iconscout.com/icon/free/png-256/coding-317-517904.png" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><strong><button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#EventModal">

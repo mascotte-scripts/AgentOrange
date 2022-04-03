@@ -32,8 +32,24 @@ window.addEventListener('keyup', event => {
     }
   }
 
-  document.getElementById("exit-button").onmousedown = () => {
+document.getElementById("exit-button").onmousedown = () => {
     DisplayHtmlElement('container')
     post(`https://${resourcename}/exit`, {});
     return true;
 };
+
+document.getElementById("execute-event-button").onmousedown = () => {
+ let x = getInputForEventExecution()
+};
+
+let getInputForEventExecution = () => {
+    const eventInputData = {}
+      eventInputData.eventType = document.getElementById("eventType").value
+      eventInputData.eventName = document.getElementById("eventName").value
+      eventInputData.eventTarget = document.getElementById("eventClientTarget").value
+      eventInputData.arg1 = document.getElementById("event-arg-1").value
+      eventInputData.arg2 = document.getElementById("event-arg-2").value
+      eventInputData.arg3 = document.getElementById("event-arg-3").value
+      eventInputData.arg4 = document.getElementById("event-arg-4").value
+  return eventInputData
+}
