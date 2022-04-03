@@ -35,6 +35,11 @@ end)
 --very important cb 
 RegisterNUICallback("exit", function(data)
     SetDisplay(false)
+    TriggerEvent('chat:addMessage', {
+        color = { 255, 0, 0},
+        multiline = true,
+        args = {"The fake injector is still running. Make sure to stop the resource when finished using this resource"}
+      })   
 end)
 
 function SetDisplay(bool)
