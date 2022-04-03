@@ -25,6 +25,7 @@ body {
     padding: 8.5rem;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .footer {

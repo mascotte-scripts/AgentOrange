@@ -7,7 +7,7 @@ let post = (url, data) => {
     })
 }
 
-window.addEventListener('message', function(event){
+window.addEventListener('message', event =>{
     let item = event.data;
     eventData = item;
     if (item.status === true) {
@@ -23,7 +23,7 @@ window.addEventListener('keyup', event => {
   }
 })
 
-  let DisplayHtmlElement = (module) => {
+  let DisplayHtmlElement = module => {
     var x = document.getElementById(module);
     if (x.style.display === "block") {
       x.style.display = "none";

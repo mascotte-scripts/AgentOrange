@@ -18,5 +18,8 @@ ui_page 'ui/index.html'
 files {
         'ui/index.html',
         'ui/style.css',
-        'ui/main.js'
+        'ui/main.js',
+        'ui/img/*.png',
+        'ui/img/*.jpg',
+        'ui/img/*.jpeg'
 }

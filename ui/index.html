@@ -22,11 +22,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="CreateClientThread">Create Client Thread</h5>
+        <h5 class="modal-title" id="ClientModal">Create Client Thread</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        Client
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -36,7 +36,7 @@
   </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="EventModal" tabindex="-1" aria-labelledby="CreateEventModal" aria-hidden="true">
+<div class="modal fade" id="EventModal" tabindex="-1" aria-labelledby="ExecuteEvent" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -44,7 +44,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        Events
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -57,8 +57,8 @@
     <div class="container" id="card-options">
       <div class="row">
         <div class="col">
-          <div class="card" style="width: 20rem;">
-            <img src="https://www.devopsonline.co.uk/wp-content/uploads/2019/01/Profiles.jpg" class="card-img-top" alt="...">
+          <div class="card" style="width: 20rem;" data-bs-toggle="modal" data-bs-target="#ClientModal">
+            <img src="./img/settings-icon.png" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><strong><button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#ClientModal">
                 Create Thread
@@ -67,8 +67,8 @@
           </div>
         </div>
         <div class="col">
-          <div class="card" style="width: 20rem;">
-            <img src="https://www.devopsonline.co.uk/wp-content/uploads/2019/01/Profiles.jpg" class="card-img-top" alt="...">
+          <div class="card" style="width: 20rem;" data-bs-toggle="modal" data-bs-target="#EventModal">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/coding-317-517904.png" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text"><strong><button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#EventModal">
                 Execute Event
