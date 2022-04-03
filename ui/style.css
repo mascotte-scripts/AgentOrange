@@ -1,9 +1,45 @@
-#card {  
-    background-color: #efefef;
-    box-shadow: 2px 2px 5px black;
+body {
+    background: none !important;
+}
+
+#container {
+    display: none;
+    background: #ffffff;
+    box-shadow: 10px 5px 5px black;
+    margin-top: 5rem;
+    border-radius: 0.4rem;
+    opacity: 0.;
+}
+
+#header-style {
     display: flex;
-    justify-content: center;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+#card-options {
+    display: flex;
+    margin-top: 0.5rem;
+    padding: 8.5rem;
     align-items: center;
-    width: 45em;
-    margin: 1em;
- } 
+    justify-content: center;
+}
+
+.footer {
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.card {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.card:hover {
+    box-shadow: 10px 10px 10px black;
+}
