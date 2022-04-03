@@ -1,34 +1,33 @@
-RegisterNetEvent('FakeInjection:SimulateClientinjection', function(source,eventName,Param1,Param2,Param3,Param4)
-    TriggerEvent(eventName,source,Param1,Param2,Param3,Param4)
+RegisterNetEvent('FakeInjection:SimulateClientinjection', function(source,eventName,eventParams)
+    TriggerEvent(eventName,source,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
 end)
 
-RegisterNetEvent('FakeInjection:SimulateServerinjection', function(source,eventName,Param1,Param2,Param3,Param4)
-    TriggerServerEvent(eventName,Param1,Param2,Param3,Param4)
-end)
-
-RegisterNetEvent('quicktest', function(source)
-print('Testing Client Event')
+RegisterNetEvent('FakeInjection:SimulateServerinjection', function(source,eventName,eventParams)
+    TriggerServerEvent(eventName,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
 end)
 
 local display = false
 
-RegisterCommand("mascotte", function(source, args)
+RegisterCommand("FakeInjector", function(source, args)
     SetDisplay(not display)
 end)
 
-RegisterCommand("thread", function(source, args)
-   local time = tonumber(args[1])
-   local param1 = tostring(args[2])
-   ExecuteClientThread(time,param1)
+--very important cb 
+RegisterNUICallback("CreateClientThread", function(data)
+    local time = tonumber(data.time)
+    local param1 = tostring(data.param[1])
+    ExecuteClientThread(time,param1)
 end)
 
-RegisterCommand("mascotte-test", function(source, args)
-    local eventType = args[1]
-    local eventName = args[2]
+--very important cb 
+RegisterNUICallback("ExecuteEvent", function(data)
+    local eventType = data.eventType
+    local eventName = data.eventName
+    local eventParams = data.eventParams
     if eventType == 'client' then
-            TriggerEvent('FakeInjection:SimulateClientinjection',source,eventName)
+            TriggerEvent('FakeInjection:SimulateClientinjection',source,eventName,eventParams)
         elseif eventType == 'server' then
-            TriggerEvent('FakeInjection:SimulateServerinjection',source,eventName)
+            TriggerEvent('FakeInjection:SimulateServerinjection',source,eventName,eventParams)
         else print('An error occured, you did not choose an event type')
     end
 end)
@@ -64,7 +63,6 @@ CreateThread(function()
     Wait(0)
   end
 end)
-
 
 function ExecuteClientThread(time,bool,param1)
     CreateThread(function()
