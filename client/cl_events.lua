@@ -28,7 +28,12 @@ end)
 RegisterNUICallback("ExecuteEvent", function(data)
     local eventType = data.eventType
     local eventName = data.eventName
-    local eventParams = data.eventParams
+    local eventParams = {
+        eventParams[1] = data.args1,
+        eventParams[2] = data.args2,
+        eventParams[3] = data.args3,
+        eventParams[4] = data.args4
+    }
     if eventType == 'client' then
             TriggerEvent('FakeInjection:SimulateClientinjection',source,eventName,eventParams)
         elseif eventType == 'server' then

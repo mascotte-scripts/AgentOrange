@@ -40,7 +40,13 @@ document.getElementById("exit-button").onmousedown = () => {
 
 document.getElementById("execute-event-button").onmousedown = () => {
  let x = getInputForEventExecution()
+ post(`https://${resourcename}/ExecuteEvent`, {x});
 };
+
+document.getElementById("execute-thread-button").onmousedown = () => {
+  let x = getInputForThreadExecution()
+  post(`https://${resourcename}/CreateClientThread`, {x});
+ };
 
 let getInputForEventExecution = () => {
     const eventInputData = {}
@@ -52,4 +58,10 @@ let getInputForEventExecution = () => {
       eventInputData.arg3 = document.getElementById("event-arg-3").value
       eventInputData.arg4 = document.getElementById("event-arg-4").value
   return eventInputData
+}
+
+let getInputForThreadExecution = () => {
+  const ThreadInputData = {}
+
+return ThreadInputData
 }
