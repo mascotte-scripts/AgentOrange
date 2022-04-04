@@ -37,18 +37,8 @@ document.getElementById("exit-button").onmousedown = () => {
     post(`https://${resourcename}/exit`, {});
     return true;
 };
-
-document.getElementById("execute-event-button").onmousedown = () => {
- let x = getInputForEventExecution()
- post(`https://${resourcename}/ExecuteEvent`, {x});
-};
-
-document.getElementById("execute-thread-button").onmousedown = () => {
-  let x = getInputForThreadExecution()
-  post(`https://${resourcename}/CreateClientThread`, {x});
- };
-
-let getInputForEventExecution = () => {
+ 
+ function getInputForEventExecution() {
     const eventInputData = {}
       eventInputData.eventType = document.getElementById("eventType").value
       eventInputData.eventName = document.getElementById("eventName").value
@@ -60,8 +50,18 @@ let getInputForEventExecution = () => {
   return eventInputData
 }
 
-let getInputForThreadExecution = () => {
+function getInputForThreadExecution() {
   const ThreadInputData = {}
 
 return ThreadInputData
 }
+
+document.getElementById("execute-event-button").onmousedown = () => {
+  let x = getInputForEventExecution()
+  post(`https://${resourcename}/ExecuteEvent`, x);
+ };
+ 
+ document.getElementById("execute-thread-button").onmousedown = () => {
+   let x = getInputForThreadExecution()
+   post(`https://${resourcename}/CreateClientThread`, x);
+  };

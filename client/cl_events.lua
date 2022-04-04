@@ -1,6 +1,6 @@
 -- These are the events we aim to trigger from NUI. We pass it paramaters of the event we want to attempt to execure
-RegisterNetEvent('FakeInjection:SimulateClientinjection', function(source,eventName,eventParams)
-    TriggerEvent(eventName,source,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
+RegisterNetEvent('FakeInjection:SimulateClientinjection', function(source,eventName,eventTarget,eventParams)
+    TriggerEvent(eventName,eventTarget,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
 end)
 
 RegisterNetEvent('FakeInjection:SimulateServerinjection', function(source,eventName,eventParams)
@@ -26,17 +26,17 @@ end)
 
 -- Very important cb - It handles passing data from the NUI to the client or server for execution of events
 RegisterNUICallback("ExecuteEvent", function(data)
-    local eventType = data.eventType
+    local eventType = tonumber(data.eventType)
     local eventName = data.eventName
-    local eventParams = {
-        eventParams[1] = data.args1,
-        eventParams[2] = data.args2,
-        eventParams[3] = data.args3,
-        eventParams[4] = data.args4
-    }
-    if eventType == 'client' then
-            TriggerEvent('FakeInjection:SimulateClientinjection',source,eventName,eventParams)
-        elseif eventType == 'server' then
+    local eventParams = {}
+        eventParams[1] = data.arg1
+        eventParams[2] = data.arg2
+        eventParams[3] = data.arg3
+        eventParams[4] = data.arg4
+    local eventTarget = data.eventTarget
+    if eventType == 1 then
+            TriggerEvent('FakeInjection:SimulateClientinjection',source,eventName,eventTarget,eventParams)
+        elseif eventType == 2 then
             TriggerEvent('FakeInjection:SimulateServerinjection',source,eventName,eventParams)
         else print('An error occured, you did not choose an event type')
     end
