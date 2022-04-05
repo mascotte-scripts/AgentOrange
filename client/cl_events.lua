@@ -1,10 +1,15 @@
 -- These are the events we aim to trigger from NUI. We pass it paramaters of the event we want to attempt to execure
-RegisterNetEvent('AGENTORANGE:SimulateClientinjection', function(source,eventName,eventTarget,eventParams)
+RegisterNetEvent('AGENTORANGE:SimulateClientinjection', function(eventName,eventTarget,eventParams)
     TriggerEvent(eventName,eventTarget,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
 end)
 
-RegisterNetEvent('AGENTORANGE:SimulateServerinjection', function(source,eventName,eventParams)
-    TriggerServerEvent(eventName,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
+RegisterNetEvent('AGENTORANGE:SimulateServerinjection', function(eventName,eventTarget,eventParams)
+    TriggerServerEvent(eventName,eventTarget,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
+end)
+
+RegisterNetEvent('testevent', function (playerid, args)
+    print(playerid)
+    print(tonumber(source))
 end)
 
 -- NUI Stuff
@@ -14,6 +19,7 @@ local display = false
 -- Command that opens the NUI
 
 RegisterCommand("AgentOrange", function(source, args)
+    print(source)
     SetDisplay(not display)
 end)
 
@@ -33,12 +39,19 @@ RegisterNUICallback("ExecuteEvent", function(data)
         eventParams[2] = data.arg2
         eventParams[3] = data.arg3
         eventParams[4] = data.arg4
-        print(eventParams[3])
     local eventTarget = data.eventTarget
+    if eventTarget == 'source' then -- The NUI passes a string or a number, so we need to convert it to a number if it's a string
+        eventTarget = source
+    elseif eventTarget == 'target' then
+        eventTarget = target
+    else
+        eventTarget = tonumber(eventTarget)
+    end
+    print(eventTarget)
     if eventType == 1 then
-            TriggerEvent('AGENTORANGE:SimulateClientinjection',source,eventName,eventTarget,eventParams)
+            TriggerEvent('AGENTORANGE:SimulateClientinjection',eventName,eventTarget,eventParams)
         elseif eventType == 2 then
-            TriggerEvent('AGENTORANGE:SimulateServerinjection',source,eventName,eventParams)
+            TriggerEvent('AGENTORANGE:SimulateServerinjection',eventName,eventTarget,eventParams)
         else print('An error occured, you did not choose an event type')
     end
 end)
