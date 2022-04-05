@@ -3,12 +3,12 @@ body {
 }
 
 #container {
+    background-image: url("img/agentorange.jpg");
     display: none;
-    background: #ffffff;
     box-shadow: 10px 5px 5px black;
     margin-top: 5rem;
     border-radius: 0.4rem;
-    opacity: 0.;
+    opacity: 0.9;
 }
 
 #header-style {
@@ -22,10 +22,9 @@ body {
 #card-options {
     display: flex;
     margin-top: 0.5rem;
-    padding: 8.5rem;
+    padding: 9.5rem;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
 }
 
 .footer {
@@ -39,8 +38,20 @@ body {
     align-items: center;
     justify-content: center;
     display: flex;
+    cursor: pointer;
+    opacity: 0.9;
 }
 
 .card:hover {
     box-shadow: 10px 10px 10px black;
+}
+
+.spacer {
+    margin: 1rem;
+}
+
+.modal {
+  background-image: url("img/agentorange.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

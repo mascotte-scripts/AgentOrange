@@ -1,9 +1,9 @@
 -- These are the events we aim to trigger from NUI. We pass it paramaters of the event we want to attempt to execure
-RegisterNetEvent('FakeInjection:SimulateClientinjection', function(source,eventName,eventTarget,eventParams)
+RegisterNetEvent('AGENTORANGE:SimulateClientinjection', function(source,eventName,eventTarget,eventParams)
     TriggerEvent(eventName,eventTarget,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
 end)
 
-RegisterNetEvent('FakeInjection:SimulateServerinjection', function(source,eventName,eventParams)
+RegisterNetEvent('AGENTORANGE:SimulateServerinjection', function(source,eventName,eventParams)
     TriggerServerEvent(eventName,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
 end)
 
@@ -13,7 +13,7 @@ local display = false
 
 -- Command that opens the NUI
 
-RegisterCommand("FakeInjector", function(source, args)
+RegisterCommand("AgentOrange", function(source, args)
     SetDisplay(not display)
 end)
 
@@ -33,11 +33,12 @@ RegisterNUICallback("ExecuteEvent", function(data)
         eventParams[2] = data.arg2
         eventParams[3] = data.arg3
         eventParams[4] = data.arg4
+        print(eventParams[3])
     local eventTarget = data.eventTarget
     if eventType == 1 then
-            TriggerEvent('FakeInjection:SimulateClientinjection',source,eventName,eventTarget,eventParams)
+            TriggerEvent('AGENTORANGE:SimulateClientinjection',source,eventName,eventTarget,eventParams)
         elseif eventType == 2 then
-            TriggerEvent('FakeInjection:SimulateServerinjection',source,eventName,eventParams)
+            TriggerEvent('AGENTORANGE:SimulateServerinjection',source,eventName,eventParams)
         else print('An error occured, you did not choose an event type')
     end
 end)
