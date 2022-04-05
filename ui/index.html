@@ -28,7 +28,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Execute</button>
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Execute</button>
               </div>
             </div>
           </div>
@@ -37,59 +37,55 @@
             <div class="modal fade" id="EventModal" tabindex="-1" aria-labelledby="ExecuteEvent" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content bg-black text-white opacity-75">
-              <div class="modal-header">
-                <h5 class="modal-title" id="EventModal">Execute Client/Server Event</h5>
+              <div class="modal-header text-center"">
+                <h5 class="modal-title  w-100" id="EventModal"><strong>Execute Client/Server Event</strong></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <!-- Event form starts here-->
                 <form>
-                  <label for="eventTypeNameLabel" class="form-label">Event Type</label>
-                <select class="form-select bg-black text-white" aria-label="event-selector" id="eventType">
+                  <label for="eventTypeNameLabel" class="form-label text-center w-100"><strong>Event Type</strong></label>
+                <select class="form-select bg-black d-flex text-white" aria-label="event-selector" id="eventType">
                   <option value="1">Client</option>
                   <option value="2">Server</option>
                 </select>
                 <br/>
                 <div class="mb-3">
-                  <label for="eventNameLabel" class="form-label">Event Name</label>
+                  <label for="eventNameLabel" class="form-label text-center w-100"><strong>Event Name</strong></label>
                   <input type="text" class="form-control bg-black text-white" id="eventName" placeholder="i.e - esx_policejob:handcuff">
                 </div>
                 <div class="mb-3">
-                  <label for="eventNameLabel" class="form-label">Target</label>
+                  <label for="eventNameLabel" class="form-label text-center w-100"><strong>Target</strong></label>
                   <input type="text" class="form-control bg-black text-white" id="eventClientTarget" placeholder="i.e - source, -1">
                 </div>
-                <label for="eventTypeNameLabel" class="form-label bg-black text-white">Arguments</label>
+                <label for="eventTypeNameLabel" class="form-label bg-black text-center w-100 text-white"><strong>Arguments</strong></label>
                 <!--First-->
                 <div class="input-group mb-3">
-                  <div class="input-group-text bg-black text-white">
-                  </div>
+                
                   <input type="text" class="form-control bg-black text-white" placeholder="First Argument" aria-label="first paramater" id="event-arg-1">
                 </div>
                 <!--Second-->
                 <div class="input-group mb-3">
-                  <div class="input-group-text bg-black text-white">
-                  </div>
+               
                   <input type="text" class="form-control bg-black text-white" placeholder="Second Argument" aria-label="second paramater" id="event-arg-2">
                 </div>
                 <!--Third-->
                 <div class="input-group mb-3">
-                  <div class="input-group-text bg-black text-white">
-                  </div>
+                
                   <input type="text" class="form-control bg-black text-white" placeholder="Third Argument" aria-label="third paramater" id="event-arg-3">
                 </div>
                 <!--Fourth-->
                 <div class="input-group mb-3">
-                  <div class="input-group-text bg-black text-white">
-                  </div>
+            
                   <input type="text" class="form-control bg-black text-white" placeholder="Fourth Argument" aria-label="fourth paramater" id="event-arg-4">
                 </div>
-                <div id="emailHelp" class="form-text bg-black text-white">Remember: Never run this script on a live public server</div>
+                <div id="emailHelp" class="form-text bg-black text-center w-100 text-white"><strong>Remember: Never run this script on a live public server</strong></div>
                 </form>
                 <!-- Form ends-->
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger" id="execute-event-button" data-bs-dismiss="modal">Execute</button>
+                <button type="button" class="btn btn-dark" id="execute-event-button" data-bs-dismiss="modal">Execute</button>
               </div>
             </div>
           </div>

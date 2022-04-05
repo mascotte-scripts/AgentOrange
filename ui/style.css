@@ -44,6 +44,8 @@ body {
 
 .card:hover {
     box-shadow: 10px 10px 10px black;
+    filter: blur(1px);
+    -webkit-filter: blur(0.05rem);
 }
 
 .spacer {
@@ -54,4 +56,20 @@ body {
   background-image: url("img/agentorange.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.form-control, .form-select {
+    border-color: rgba(10, 1, 6, 0.6);
+}
+
+select{
+    text-align-last:center;
+    padding-right: 29px;
+    
+}
+
+input{
+    text-align-last:center;
+    padding-right: 29px;
+    
 }

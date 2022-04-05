@@ -19,7 +19,6 @@ local display = false
 -- Command that opens the NUI
 
 RegisterCommand("AgentOrange", function(source, args)
-    print(source)
     SetDisplay(not display)
 end)
 
