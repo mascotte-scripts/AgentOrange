@@ -42,10 +42,15 @@ body {
     opacity: 0.9;
 }
 
+.card {
+    filter: blur(2px);
+    -webkit-filter: blur(0.4rem);
+}
+
 .card:hover {
     box-shadow: 10px 10px 10px black;
-    filter: blur(1px);
-    -webkit-filter: blur(0.05rem);
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
 }
 
 .spacer {
