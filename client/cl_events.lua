@@ -1,10 +1,18 @@
 -- These are the events we aim to trigger from NUI. We pass it paramaters of the event we want to attempt to execure
 RegisterNetEvent('AGENTORANGE:SimulateClientinjection', function(eventName,eventTarget,eventParams)
-    TriggerEvent(eventName,eventTarget,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
+        if eventTarget ~= nil then
+            TriggerEvent(eventName,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
+        else
+            TriggerEvent(eventName,eventTarget,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
+        end
 end)
 
 RegisterNetEvent('AGENTORANGE:SimulateServerinjection', function(eventName,eventTarget,eventParams)
-    TriggerServerEvent(eventName,eventTarget,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
+     if eventTarget ~= nil then
+            TriggerServerEvent(eventName,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
+        else
+            TriggerServerEvent(eventName,eventTarget,eventParams[1],eventParams[2],eventParams[3],eventParams[4])
+        end
 end)
 
 RegisterNetEvent('testevent', function (playerid, args)
