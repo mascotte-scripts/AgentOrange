@@ -10,8 +10,10 @@ A FiveM resource that simulates a LUA injector but within the enviroment of a re
 
 Only use this resource if you're a developer or server owner who knows what they're doing. This resource is intended to do good but being reckless with it could open up a huge can of worms for you as it will alow absolutely anyone the ability to execute vulnerable events on your server
 
-# Installation & Use
+# Dependencies
+- None
 
+# Installation & Use
 - Drag & drop the resource and place it somewhere in your servers resource folder
 - Start the resource using start AgentOrange from the command line or using TXAdmin
 - Access the NUI by typing /AgentOrange in the ingame chatbox or F8 console
