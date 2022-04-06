@@ -5,15 +5,15 @@ Agent Orange should only ever be ran on a private development server that cannot
 
 **Careless use of this resource could potentially cause you more harm than good**
 
-# [WIP] Agent Orange - A Fake LUA 'Injector'
+## [WIP] Agent Orange - A Fake LUA 'Injector'
 A FiveM resource that simulates a LUA injector but within the enviroment of a resource. Useful for testing how secure your events are from LUA injection and for  improving the general security of your resources.
 
 Only use this resource if you're a developer or server owner who knows what they're doing. This resource is intended to do good but being reckless with it could open up a huge can of worms for you as it will alow absolutely anyone the ability to execute vulnerable events on your server
 
-# Dependencies
+## Dependencies
 - None
 
-# Installation & Use
+## Installation & Use
 - Drag & drop the resource and place it somewhere in your servers resource folder
 - Start the resource using start AgentOrange from the command line or using TXAdmin
 - Access the NUI by typing /AgentOrange in the ingame chatbox or F8 console
