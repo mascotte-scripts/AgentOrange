@@ -7,3 +7,5 @@ Agent Orange should only ever be ran on a private development server that cannot
 
 # [WIP] Agent Orange - A Fake LUA 'Injector'
 A FiveM resource that simulates a LUA injector but within the enviroment of a resource. Useful for testing how secure your events are from LUA injection and for  improving the general security of your resources.
+
+Only use this resource if you're a developer or server owner who knows what they're doing. This resource is intended to do good but being reckless with it could open up a huge can of worms for you
